@@ -11,7 +11,7 @@ public class ReconhecedorPalavrasReservadas {
             bf = new BufferedReader(new FileReader("entrada.txt"));
             String line;
             while ((line = bf.readLine()) != null) {
-                if (reconhecerComentario(line)) {
+                if (reconhecer(line)) {
                     System.out.println("Entrada válida: " + line);
                 } else {
                     System.out.println("Entrada inválida: " + line);
@@ -23,7 +23,7 @@ public class ReconhecedorPalavrasReservadas {
     }
 
 
-    private static boolean reconhecerParenteses(String entrada){
+    private static boolean reconhecer(String entrada){
         estadoAtual = 0;
         for (int i = 0; i < entrada.length(); i++) {
             char caractere = entrada.charAt(i);
@@ -68,14 +68,14 @@ public class ReconhecedorPalavrasReservadas {
                 if (caractere == 'f'){
                     return 21;
                 } else if(caractere == 'n'){
-                    estadoAtual = 10;
+                    estadoAtual = 9;
                 } 
                 else{
                     return -1;
                 }
             case 3:
                 if(caractere == 'l'){
-                    estadoAtual = 9;
+                    estadoAtual = 10;
                 }else{
                     return -1;
                 }
@@ -91,7 +91,7 @@ public class ReconhecedorPalavrasReservadas {
                 }
             case 6:
                 if(caractere == 'w'){
-                    estadoAtual = 14;
+                    estadoAtual = 12;
                 }
             
             case 7:
@@ -100,7 +100,12 @@ public class ReconhecedorPalavrasReservadas {
                 }else{
                     return -1;
                 }
-
+            case 8:
+                if(caractere == 'o'){
+                    estadoAtual = 13;
+                }else{
+                    return -1;
+                }
             
             case 9: 
                 if(caractere == 's'){
@@ -111,7 +116,10 @@ public class ReconhecedorPalavrasReservadas {
             case 10:
                 if(caractere == 'e'){
                     return 22;
-                }else{
+                } else if(caractere == 't'){
+                    return 25;
+                }
+                else{
                     return -1;
                 }
             case 11:
