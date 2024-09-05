@@ -13,6 +13,7 @@
                 while ((line = bf.readLine()) != null) {
                     if (reconhecer(line)) {
                         System.out.println("Entrada válida: " + line);
+                        System.out.println("Token: " + estadoAtual);
                     } else {
                         System.out.println("Entrada inválida: " + line);
                     }
