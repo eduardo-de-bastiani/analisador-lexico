@@ -1,0 +1,10 @@
+if
+for
+switch
+do
+int
+float
+else
+hello
+test
+while
