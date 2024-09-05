@@ -3,7 +3,6 @@
     public class ReconhecedorPalavrasReservadas {
 
         private static BufferedReader bf;
-        private static int proximoCaractere;
         private static int estadoAtual;
 
         public static void main(String[] args) {
